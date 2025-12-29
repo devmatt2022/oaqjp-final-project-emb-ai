@@ -12,8 +12,10 @@ def emotion_detector(text_to_analyse):
 
     formatted_response = json.loads(response.text)
 
-    emotion_predictions = formatted_response
+    emotion_predictions = formatted_response["emotionPredictions"]
+    emotion = emotion_predictions[0]["emotion"]
+    emotion["dominant_emotion"] = max(emotion.items(), key=lambda k: k[1])[0]
 
-    return json.dumps(emotion_predictions, indent=2)
+    return json.dumps(emotion, indent=2)
 
 print(emotion_detector("I love this new technology."))
