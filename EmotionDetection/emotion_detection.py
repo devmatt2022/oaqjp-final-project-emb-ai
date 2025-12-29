@@ -18,4 +18,4 @@ def emotion_detector(text_to_analyse):
 
     return json.dumps(emotion, indent=2)
 
-print(emotion_detector("I love this new technology."))
+# print(emotion_detector("I am so happy I am doing this."))
