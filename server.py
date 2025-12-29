@@ -1,3 +1,6 @@
+"""
+Module DocString
+"""
 import os
 
 from flask import Flask, render_template, request
@@ -13,6 +16,9 @@ print("FILES:", os.listdir(app.template_folder))
 
 @app.route("/emotionDetector")
 def emotion_detector_route():
+    """
+    emotionDetector route
+    """
     # Retrieve the text to analyze from the request arguments
     text_to_analyze = request.args.get("textToAnalyze")
 
@@ -35,6 +41,9 @@ def emotion_detector_route():
 
 @app.route("/")
 def render_index_page():
+    """
+        Index page route
+    """
     return render_template("index.html")
 
 
